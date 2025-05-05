@@ -10,197 +10,197 @@
 # - Use a conditional statement to check if `python_is_fun` is `True`.
 # - If `python_is_fun` is `True`, print the message "Python is fun!"
 
-# def print_greeting():
-#     # Your code goes here. Remember to indent!
-#     python_is_fun = True
-#     if python_is_fun:
-#         print("Python is fun!")
+def print_greeting():
+    # Your code goes here. Remember to indent!
+    python_is_fun = True
+    if python_is_fun:
+        print("Python is fun!")
 
-# # Call the function
-# print_greeting()
+# Call the function
+print_greeting()
 
-# #-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
-# # Exercise 1: Vowel or Consonant
-# #
-# # Write a Python function named `check_letter` that determines if a given letter
-# # is a vowel or a consonant.
-# #
-# # Requirements:
-# # - The function should prompt the user to enter a letter (a-z or A-Z) and determine its type.
-# # - It should handle both uppercase and lowercase letters.
-# # - If the letter is a vowel (a, e, i, o, u), print: "The letter x is a vowel."
-# # - If the letter is a consonant, print: "The letter x is a consonant."
-# # - Replace 'x' with the actual letter entered by the user.
-# #
-# # Hints:
-# # - Use the `input()` function to capture user input.
-# # - Utilize the `in` operator to check for vowels.
-# # - Ensure to provide feedback for non-alphabetical or invalid entries.
+# Exercise 1: Vowel or Consonant
+#
+# Write a Python function named `check_letter` that determines if a given letter
+# is a vowel or a consonant.
+#
+# Requirements:
+# - The function should prompt the user to enter a letter (a-z or A-Z) and determine its type.
+# - It should handle both uppercase and lowercase letters.
+# - If the letter is a vowel (a, e, i, o, u), print: "The letter x is a vowel."
+# - If the letter is a consonant, print: "The letter x is a consonant."
+# - Replace 'x' with the actual letter entered by the user.
+#
+# Hints:
+# - Use the `input()` function to capture user input.
+# - Utilize the `in` operator to check for vowels.
+# - Ensure to provide feedback for non-alphabetical or invalid entries.
 
-# def check_letter():
-#     # Your control flow logic goes here
-#     # Refactored original check for vowels with this list.
-#     vowels = ['a', 'e', 'i', 'o', 'u']
+def check_letter():
+    # Your control flow logic goes here
+    # Refactored original check for vowels with this list.
+    vowels = ['a', 'e', 'i', 'o', 'u']
     
-#     while True: 
-#         letter = input('Enter a letter (or "quit"): ').lower()
+    while True: 
+        letter = input('Enter a letter (or "quit"): ').lower()
 
-#         if letter == 'quit':
-#             print('See ya!')
-#             break
-#         elif not letter.isalpha():
-#             print(f'{letter} is not a letter. Please try again.')  
-#         elif len(letter) != 1:
-#             print('Looks like you entered more than one letter. Try again!')
+        if letter == 'quit':
+            print('See ya!')
+            break
+        elif not letter.isalpha():
+            print(f'{letter} is not a letter. Please try again.')  
+        elif len(letter) != 1:
+            print('Looks like you entered more than one letter. Try again!')
         
-#         # This works but seems a little ridiculous...
-#         # elif ('a' in letter) or ('e' in letter) or ('i' in letter) or ('o' in letter) or ('u' in letter):
-#         # Refactored:
-#         elif letter in vowels:
-#             print(f'The letter {letter} is a vowel.')
-#         else: 
-#             print(f'The letter {letter} is a consonant.')
+        # This works but seems a little ridiculous...
+        # elif ('a' in letter) or ('e' in letter) or ('i' in letter) or ('o' in letter) or ('u' in letter):
+        # Refactored:
+        elif letter in vowels:
+            print(f'The letter {letter} is a vowel.')
+        else: 
+            print(f'The letter {letter} is a consonant.')
     
-# # Call the function
-# check_letter()
+# Call the function
+check_letter()
 
-# # https://stackoverflow.com/questions/32792554/how-do-i-provide-error-checking-to-ensure-user-input-only-allows-letters-and-pro
+# https://stackoverflow.com/questions/32792554/how-do-i-provide-error-checking-to-ensure-user-input-only-allows-letters-and-pro
 
-# # https://brainly.com/question/22294497
+# https://brainly.com/question/22294497
 
-# #-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
-# # Exercise 2: Old enough to vote?
-# #
-# # Write a Python function named `check_voting_eligibility` that determines if a user is old enough to vote.
-# # Fill in the logic to perform the eligibility check inside the function.
-# #
-# # Function Details:
-# # - Prompt the user to input their age: "Please enter your age: "
-# # - Validate the input to ensure the age is a possible value (no negative numbers).
-# # - Determine if the user is eligible to vote. Set a variable for the voting age.
-# # - Print a message indicating whether the user is eligible to vote based on the entered age.
-# #
-# # Hints:
-# # - Use the `input()` function to capture the user's age.
-# # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
-# # - Use a conditional statement to check if the age meets the minimum voting age requirement.
+# Exercise 2: Old enough to vote?
+#
+# Write a Python function named `check_voting_eligibility` that determines if a user is old enough to vote.
+# Fill in the logic to perform the eligibility check inside the function.
+#
+# Function Details:
+# - Prompt the user to input their age: "Please enter your age: "
+# - Validate the input to ensure the age is a possible value (no negative numbers).
+# - Determine if the user is eligible to vote. Set a variable for the voting age.
+# - Print a message indicating whether the user is eligible to vote based on the entered age.
+#
+# Hints:
+# - Use the `input()` function to capture the user's age.
+# - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
+# - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
-# def check_voting_eligibility():
-#     # Your control flow logic goes here
-#     age = input('Enter your age to see if you\'re old enough to vote: ')
-#     voting_age = 18
+def check_voting_eligibility():
+    # Your control flow logic goes here
+    age = input('Enter your age to see if you\'re old enough to vote: ')
+    voting_age = 18
     
-#     if age.isalpha():
-#         print('Oops! Looks like you entered a non-numeric value. Try adding a valid age next time.')
-#     elif int(age) <= 0:
-#         print('Oops! Try adding a valid age next time.')
-#     elif int(age) >= voting_age:
-#         print('Looks like you\'re old enough to vote!')
-#     else:
-#         print('You\'ve still got a few years before you can vote!')
+    if age.isalpha():
+        print('Oops! Looks like you entered a non-numeric value. Try adding a valid age next time.')
+    elif int(age) <= 0:
+        print('Oops! Try adding a valid age next time.')
+    elif int(age) >= voting_age:
+        print('Looks like you\'re old enough to vote!')
+    else:
+        print('You\'ve still got a few years before you can vote!')
 
-# # Call the function
-# check_voting_eligibility()
+# Call the function
+check_voting_eligibility()
 
-# # https://www.w3schools.com/python/ref_func_int.asp
+# https://www.w3schools.com/python/ref_func_int.asp
 
-# #-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
-# # Exercise 3: Calculate Dog Years
-# #
-# # Write a Python function named `calculate_dog_years` that calculates a dog's age in dog years.
-# # Fill in the logic to perform the calculation inside the function.
-# #
-# # Function Details:
-# # - Prompt the user to enter a dog's age: "Input a dog's age: "
-# # - Calculate the dog's age in dog years:
-# #      - The first two years of the dog's life count as 10 dog years each.
-# #      - Each subsequent year counts as 7 dog years.
-# # - Print the calculated age: "The dog's age in dog years is xx."
-# # - Replace 'xx' with the calculated dog years.
-# #
-# # Hints:
-# # - Use the `input()` function to capture user input.
-# # - Convert the string input to an integer using `int()`.
-# # - Apply conditional logic to perform the correct age calculation based on the dog's age.
+# Exercise 3: Calculate Dog Years
+#
+# Write a Python function named `calculate_dog_years` that calculates a dog's age in dog years.
+# Fill in the logic to perform the calculation inside the function.
+#
+# Function Details:
+# - Prompt the user to enter a dog's age: "Input a dog's age: "
+# - Calculate the dog's age in dog years:
+#      - The first two years of the dog's life count as 10 dog years each.
+#      - Each subsequent year counts as 7 dog years.
+# - Print the calculated age: "The dog's age in dog years is xx."
+# - Replace 'xx' with the calculated dog years.
+#
+# Hints:
+# - Use the `input()` function to capture user input.
+# - Convert the string input to an integer using `int()`.
+# - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
-# def calculate_dog_years():
-#     # Your control flow logic goes here
-#     dog_age_input = input('Input a dog\'s age: ')
-#     dog_age = int(dog_age_input)
+def calculate_dog_years():
+    # Your control flow logic goes here
+    dog_age_input = input('Input a dog\'s age: ')
+    dog_age = int(dog_age_input)
     
-#     if dog_age <= 2:
-#         print(f'The dog\'s age in dog years is {dog_age * 10}.')
-#     else:
-#         print(f'The dog\'s age in dog years is {20 + ((dog_age - 2) * 7)}.')
+    if dog_age <= 2:
+        print(f'The dog\'s age in dog years is {dog_age * 10}.')
+    else:
+        print(f'The dog\'s age in dog years is {20 + ((dog_age - 2) * 7)}.')
 
-# # Call the function
-# calculate_dog_years()
+# Call the function
+calculate_dog_years()
 
-# #-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
-# # Exercise 4: Weather Advice
-# #
-# # Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
-# #
-# # Requirements:
-# # - The script should prompt the user to enter if it is cold (yes/no).
-# # - Then, ask if it is raining (yes/no).
-# # - Use logical operators to determine clothing advice:
-# #   - If it is cold AND raining, print "Wear a waterproof coat."
-# #   - If it is cold BUT NOT raining, print "Wear a warm coat."
-# #   - If it is NOT cold but raining, print "Carry an umbrella."
-# #   - If it is NOT cold AND NOT raining, print "Wear light clothing."
-# #
-# # Hints:
-# # - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
 
-# def weather_advice():
-#     # Your control flow logic goes here
+def weather_advice():
+    # Your control flow logic goes here
     
-#     # Original code
-#     # temp_gage = input('Is it cold outside?: ').lower()
-#     # if temp_gage =='yes':
-#     #     is_cold = True
-#     # elif temp_gage == 'no':
-#     #     is_cold = False
-#     # else: 
-#     #     print('Make sure to answer "yes" or "no."')
+    # Original code
+    # temp_gage = input('Is it cold outside?: ').lower()
+    # if temp_gage =='yes':
+    #     is_cold = True
+    # elif temp_gage == 'no':
+    #     is_cold = False
+    # else: 
+    #     print('Make sure to answer "yes" or "no."')
         
-#     # rain_gage = input('Is it raining outside?: ').lower()
-#     # if rain_gage == 'yes':
-#     #     is_raining = True
-#     # elif rain_gage == 'no':
-#     #     is_raining = False
-#     # else: 
-#     #     print('Make sure to answer "yes" or "no."')
+    # rain_gage = input('Is it raining outside?: ').lower()
+    # if rain_gage == 'yes':
+    #     is_raining = True
+    # elif rain_gage == 'no':
+    #     is_raining = False
+    # else: 
+    #     print('Make sure to answer "yes" or "no."')
         
-#     # if is_cold and is_raining:
-#     #     print('Wear a waterproof coat.')
-#     # elif is_cold and not is_raining:
-#     #     print('Wear a warm coat.')
-#     # elif not is_cold and is_raining:
-#     #     print('Carry an umbrella.')
-#     # else:
-#     #     print('Wear light clothing.')
+    # if is_cold and is_raining:
+    #     print('Wear a waterproof coat.')
+    # elif is_cold and not is_raining:
+    #     print('Wear a warm coat.')
+    # elif not is_cold and is_raining:
+    #     print('Carry an umbrella.')
+    # else:
+    #     print('Wear light clothing.')
         
-#     # Refactored code:
-#     temp_gage = input('Is it cold outside?: ').lower()
-#     rain_gage = input('Is it raining outside?: ').lower()
+    # Refactored code:
+    temp_gage = input('Is it cold outside?: ').lower()
+    rain_gage = input('Is it raining outside?: ').lower()
     
-#     if temp_gage == 'yes' and rain_gage == 'yes':
-#         print('Wear a waterproof coat.')
-#     elif temp_gage == 'yes' and rain_gage == 'no':
-#         print('Wear a warm coat.')
-#     elif temp_gage == 'no' and rain_gage == 'yes':
-#         print('Carry an umbrella.')
-#     else:
-#         print('Wear light clothing.')
+    if temp_gage == 'yes' and rain_gage == 'yes':
+        print('Wear a waterproof coat.')
+    elif temp_gage == 'yes' and rain_gage == 'no':
+        print('Wear a warm coat.')
+    elif temp_gage == 'no' and rain_gage == 'yes':
+        print('Carry an umbrella.')
+    else:
+        print('Wear light clothing.')
 
-# # Call the function
-# weather_advice()
+# Call the function
+weather_advice()
 
 #-----------------------------------------------------------------------------------------------------
 
