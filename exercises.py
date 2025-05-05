@@ -129,12 +129,18 @@ check_voting_eligibility()
 def calculate_dog_years():
     # Your control flow logic goes here
     dog_age_input = input('Input a dog\'s age: ')
-    dog_age = int(dog_age_input)
     
-    if dog_age <= 2:
-        print(f'The dog\'s age in dog years is {dog_age * 10}.')
-    else:
-        print(f'The dog\'s age in dog years is {20 + ((dog_age - 2) * 7)}.')
+    if dog_age_input.isalpha():
+        print('Oops! Make sure to enter a number for your dog\'s age. Try again!')
+    else: 
+        dog_age = int(dog_age_input)
+        
+        if dog_age < 0:
+            print('Oops! Make sure to enter a valid age. Try again!')
+        elif dog_age <= 2:
+            print(f'The dog\'s age in dog years is {dog_age * 10}.')
+        else:
+            print(f'The dog\'s age in dog years is {20 + ((dog_age - 2) * 7)}.')
 
 # Call the function
 calculate_dog_years()
@@ -187,10 +193,13 @@ def weather_advice():
     #     print('Wear light clothing.')
         
     # Refactored code:
+    possible_answers = ['yes', 'no']
     temp_gage = input('Is it cold outside?: ').lower()
     rain_gage = input('Is it raining outside?: ').lower()
     
-    if temp_gage == 'yes' and rain_gage == 'yes':
+    if (temp_gage not in possible_answers) or (rain_gage not in possible_answers):
+        print('Oops! Make sure to only answer "yes" or "no." Try again!')
+    elif temp_gage == 'yes' and rain_gage == 'yes':
         print('Wear a waterproof coat.')
     elif temp_gage == 'yes' and rain_gage == 'no':
         print('Wear a warm coat.')
@@ -228,9 +237,12 @@ def determine_season():
     
     while True:
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        month = input('Enter the month of the year (Jan - Dec): ').capitalize()
+        month = input('Enter the month of the year (Jan - Dec) (or "quit"): ').capitalize()
         
-        if month not in months:
+        if month == 'Quit':
+            print('See ya!')
+            break
+        elif month not in months:
             print('Oops! That isn\'t a valid month. Try again!')
             break
         else:
