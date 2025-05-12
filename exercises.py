@@ -98,8 +98,10 @@ def check_voting_eligibility():
         print('Oops! Try adding a valid age next time.')
     elif int(age) >= voting_age:
         print('Looks like you\'re old enough to vote!')
-    else:
+    elif int(age) > 0 and int(age) < voting_age:
         print('You\'ve still got a few years before you can vote!')
+    else:
+        print('There was an error. Please try again!')
 
 # Call the function
 check_voting_eligibility()
